@@ -1,0 +1,72 @@
+[
+  {
+    "name": "Dönerbox",
+    "address1": "Köpenickerstr. 76\n\n",
+    "address2": "",
+    "postcode": 10179,
+    "city": "Berlin",
+    "telephone": 1519561,
+    "coordinates": "",
+    "Menu Items": ""
+  },
+  {
+    "name": "Doyum",
+    "address1": "Admiralsstr. 36-37\n",
+    "address2": "",
+    "postcode": 10999,
+    "city": "Berlin",
+    "telephone": 10601810,
+    "coordinates": "",
+    "Menu Items": ""
+  },
+  {
+    "name": "Pamfilya",
+    "address1": "Luxemburger Str. 1,\n",
+    "address2": "",
+    "postcode": 13353,
+    "city": "Berlin",
+    "telephone": 90490161,
+    "coordinates": "",
+    "Menu Items": ""
+  },
+  {
+    "name": "Mustafas",
+    "address1": "Mehringdamm 32\n",
+    "address2": "",
+    "postcode": 10961,
+    "city": "Berlin",
+    "telephone": 51651894,
+    "coordinates": "",
+    "Menu Items": ""
+  },
+  {
+    "name": "Ruya",
+    "address1": "Hauptstraße 133\n",
+    "address2": "",
+    "postcode": 10827,
+    "city": "Berlin",
+    "telephone": 940940890,
+    "coordinates": "",
+    "Menu Items": ""
+  },
+  {
+    "name": "Tadim",
+    "address1": "Adalbertstr. 98\n",
+    "address2": "",
+    "postcode": 10999,
+    "city": "Berlin",
+    "telephone": 4980890,
+    "coordinates": "",
+    "Menu Items": ""
+  },
+  {
+    "name": "Imren",
+    "address1": "Boppstr 10",
+    "address2": "",
+    "postcode": 10967,
+    "city": "Berlin",
+    "telephone": 4818641,
+    "coordinates": "",
+    "Menu Items": ""
+  }
+ ]
