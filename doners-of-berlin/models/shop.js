@@ -1,0 +1,28 @@
+const mongoose = require("mongoose");
+const Schema = mongoose.Schema;
+
+
+// TODO: Please make sure you edit the user model to whatever makes sense in this case
+const shops = new Schema({
+ name: String,
+ address1: String,
+ address2: String,
+ postcode: Number,
+ city: String,
+ telephone: Number,
+ coordinates: Array,
+ Photographs: Array,
+ menuItems: [{
+   fooditem: String,
+   price: Number,
+ }],
+ reviews: [{
+   userid: Schema.Types.ObjectId,
+   review: String
+ }],
+});
+ 
+
+module.exports = mongoose.model('shop', shops);
+
+
