@@ -1,13 +1,33 @@
-body {
-  padding: 50px;
-  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif; }
+@import url('https://fonts.googleapis.com/css2?family=Comfortaa:wght@300;400;500;600;700&family=Montserrat&display=swap');
+
+html, body, body div, span, object, iframe, blockquote, pre, abbr, address, cite, code, del, dfn, em, img, ins, kbd, q, samp, small, strong, sub, sup, var, b, i, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, figure, footer, header, hgroup, menu, nav, section, time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  outline: 0;
+  font-size: 100%;
+  vertical-align: baseline;
+  background: transparent;
+  font-family: 'Comfortaa', Helvetica, Arial, sans-serif;
+  font-size: 1rem;
+}
 
 a {
-  color: #00B7FF; }
+  color: #00B7FF;
+}
+
+.title{
+  padding: 20px;
+}
+
+.left-menu {
+  background-color: white;
+  width: 50%;
+}
 
 #map {
   position: fixed;
-  height: 75vh;
-  width: 90vw; }
+  height: 80vh;
+  width: 100%; }
 
 /*# sourceMappingURL=style.css.map */

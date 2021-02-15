@@ -12,7 +12,7 @@ const popup = new mapboxgl.Popup({
   closeButton: true
 })
 popup.setLngLat([13.41053, 52.52437])
-  .setHTML('<h1>Hello mapbox</h1>')
+  .setHTML('<h3>Hello mapbox</h3>')
   .setMaxWidth('400px')
   .addTo(map)
 
