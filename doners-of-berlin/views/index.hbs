@@ -13,6 +13,8 @@ style: 'mapbox://styles/mapbox/streets-v11', // style URL
 center: [13.41053, 52.52437], // starting position [lng, lat]
 zoom: 11 // starting zoom
 });
+
+
 let marker = new mapboxgl.Marker()
 .setLngLat([13.41053, 52.52437])
 .addTo(map);
@@ -22,6 +24,14 @@ let marker2 = new mapboxgl.Marker()
 let marker3 = new mapboxgl.Marker()
 .setLngLat([13.40, 52.51])
 .addTo(map);
+console.log(shopsList)
+
 </script>
  
+<div>
+{{#each shopsList}}
 
+<p>{{this.name}}</p>
+
+{{/each}}
+</div>
