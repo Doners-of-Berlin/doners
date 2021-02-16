@@ -11,26 +11,25 @@ const map = new mapboxgl.Map({
 const popup = new mapboxgl.Popup({
   closeButton: true
 })
-popup.setLngLat([13.41053, 52.52437])
-  .setHTML('<h1>Hello mapbox</h1>')
+
+popup
+  .setLngLat([13.41053, 52.52437])
+  .setHTML('<h3>Hello mapbox</h3>')
   .setMaxWidth('400px')
   .addTo(map)
 
-  const Shops = require('../models/shop')
-  let shopsArray = Shops.find()
-  console.log(shopsArray)
+  //static markers
+let marker = new mapboxgl.Marker()
+  .setLngLat([13.41053, 52.52437])
+  .addTo(map);
 
-  shopsArray.forEach(shop => {
-   new mapboxgl.Marker().setLngLat([shop.coordinates]).addTo(map);
-});
+let marker2 = new mapboxgl.Marker()
+  .setLngLat([13.3942, 52.52437])
+  .addTo(map);
 
+let marker3 = new mapboxgl.Marker()
+  .setLngLat([13.4, 52.51])
+  .addTo(map);
 
-let marker = new mapboxgl.Marker().setLngLat([13.41053, 52.52437]).addTo(map);
-let marker2 = new mapboxgl.Marker().setLngLat([13.3942, 52.52437]).addTo(map);
-let marker3 = new mapboxgl.Marker().setLngLat([13.4, 52.51]).addTo(map);
+  
 
-
-popup.setLngLat(marker)
-  .setHTML('<h1>Doner</h1>')
-  .setMaxWidth('400px')
-  .addTo(map)
