@@ -5,13 +5,13 @@ const Shops = require('../models/shop')
 /* GET home page */
 router.get('/', (req, res, next) => {
   Shops.find()
-  .then((shops) => {
-    // shops.coordinates.forEach(coordinate => {
-    //   new mapboxgl.Marker()
-    //   .setLngLat(coordinate)
-    //   .addTo(map);
-    // })
-    
+    .then((shops) => {
+      shops.forEach(shop => {
+        console.log('coord:', shop.coordinates)
+        // new mapboxgl.Marker()
+        //   .setLngLat(coordinate)
+        //   .addTo(map);
+    })
     res.render('index')
   })
   .catch(err => next(err))
