@@ -4,18 +4,15 @@ const Shops = require('../models/shop')
 
 /* GET home page */
 router.get('/', (req, res, next) => {
-  res.render('index')
-})
-
-router.get('/', (req, res, next) => {
-
-  Shops.coordinates.forEach(coord => {
-    console.log(coord)
-  })
-  .then(() => {
-    new mapboxgl.Marker()
-      .setLngLat(coord)
-      .addTo(map);
+  Shops.find()
+  .then((shops) => {
+    // shops.coordinates.forEach(coordinate => {
+    //   new mapboxgl.Marker()
+    //   .setLngLat(coordinate)
+    //   .addTo(map);
+    // })
+    
+    res.render('index')
   })
   .catch(err => next(err))
 })
