@@ -15,5 +15,15 @@ Shops.find().then(shopsList => {
 })
 
 
+router.get('/restaurant', (req, res, next) => {
+  Shops.find().then(shopsList => {
+    console.log('-------',shopsList);
+    res.render('restaurant', {shopsList});
+  });
+  
+  })
+  
+
+
 
 module.exports = router;
