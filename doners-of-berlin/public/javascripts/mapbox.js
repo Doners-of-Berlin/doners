@@ -11,17 +11,25 @@ const map = new mapboxgl.Map({
 const popup = new mapboxgl.Popup({
   closeButton: true
 })
-popup.setLngLat([13.41053, 52.52437])
+
+popup
+  .setLngLat([13.41053, 52.52437])
   .setHTML('<h3>Hello mapbox</h3>')
   .setMaxWidth('400px')
   .addTo(map)
 
-let marker = new mapboxgl.Marker().setLngLat([13.41053, 52.52437]).addTo(map);
-let marker2 = new mapboxgl.Marker().setLngLat([13.3942, 52.52437]).addTo(map);
-let marker3 = new mapboxgl.Marker().setLngLat([13.4, 52.51]).addTo(map);
+  //static markers
+let marker = new mapboxgl.Marker()
+  .setLngLat([13.41053, 52.52437])
+  .addTo(map);
 
+let marker2 = new mapboxgl.Marker()
+  .setLngLat([13.3942, 52.52437])
+  .addTo(map);
 
-popup.setLngLat(marker)
-  .setHTML('<h1>Doner</h1>')
-  .setMaxWidth('400px')
-  .addTo(map)
+let marker3 = new mapboxgl.Marker()
+  .setLngLat([13.4, 52.51])
+  .addTo(map);
+
+  
+
