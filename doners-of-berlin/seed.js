@@ -55,7 +55,7 @@ const donerImport = [
     "postcode": 10827,
     "city": "Berlin",
     "telephone": 940940890,
-    "coordinates": "[13.3539881, 52.4846884]",
+    "coordinates": [13.3539881, 52.4846884],
     "menuItems": []
   },
   {

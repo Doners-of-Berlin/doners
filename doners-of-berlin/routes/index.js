@@ -5,6 +5,8 @@
 const express = require('express');
 const router  = express.Router();
 const Shops = require('../models/shop')
+const fileUploader = require('../configs/cloudinary.config');
+
 
 /* GET home page */
 router.get('/', (req, res, next) => {
@@ -35,10 +37,18 @@ router.get('/restaurant/:id', (req, res, next) => {
 
       Shops.findByIdAndUpdate(shopId, {
         $push: {reviews: {reviewername, review}}
+        
       })
         .then(() => res.redirect("/restaurant/" + shopId))
         .catch((err) => console.log(err))
   })
 
+  router.post('/restaurant/:id/image-upload', fileUploader.single('image'), (req, res) => {
+    const { title, description } = req.body;
+   
+    Movie.create({ title, description, imageUrl: req.file.path })
+      .then(() => res.redirect("/restaurant/" + shopId))
+      .catch(error => console.log(error));
+  });
 
 module.exports = router;
