@@ -22,7 +22,7 @@ router.get('/', (req, res, next) => {
 
 router.get('/restaurant', (req, res, next) => {
   Shops.find().then(shopsList => {
-    console.log('-------',shopsList);
+    // console.log('-------',shopsList);
     res.render('restaurant', {shopsList});
   });
   
