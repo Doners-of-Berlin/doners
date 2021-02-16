@@ -8,6 +8,11 @@ const hbs          = require('hbs');
 const mongoose     = require('mongoose');
 const logger       = require('morgan');
 const path         = require('path');
+const session      = require('express-session');
+const MongoStore   = require('connect-mongo')(session);
+const bcrypt       = require('bcrypt');
+const passport     = require('passport');
+const LocalStrategy = require('passport-local').Strategy;
 
 
 mongoose
@@ -47,8 +52,68 @@ app.use(favicon(path.join(__dirname, 'public', 'images', 'favicon.ico')));
 // default value for title local
 app.locals.title = 'Döners of Berlin';
 
+app.use(
+  session({
+    secret: process.env.SESSION_SECRET,
+    resave: true,
+    saveUninitialized: false, // <== false if you don't want to save empty session object to the store
+    cookie: {
+      sameSite: 'none',
+      httpOnly: true,
+      maxAge: 60000 // 60 * 1000 ms === 1 min
+    },
+    store: new MongoStore({
+      mongooseConnection: mongoose.connection
+    })
+  })
+);
+
+const User = require('./models/User.model');
+
+passport.serializeUser((user, cb) => cb(null, user._id));
+ 
+passport.deserializeUser((id, cb) => {
+  User.findById(id)
+    .then(user => cb(null, user))
+    .catch(err => cb(err));
+});
+ 
+passport.use(
+  new LocalStrategy(
+    { passReqToCallback: true },
+    {
+      usernameField: 'username', // by default
+      passwordField: 'password' // by default
+    
+    },
+    (req, username, password, done) => {
+      User.findOne({ username })
+        .then(user => {
+          if (!user) {
+            return done(null, false, { message: 'Incorrect username' });
+          }
+ 
+          if (!bcrypt.compareSync(password, user.password)) {
+            return done(null, false, { message: 'Incorrect password' });
+          }
+ 
+          done(null, user);
+        })
+        .catch(err => done(err));
+    }
+  )
+);
+
+
+app.use(passport.initialize());
+app.use(passport.session());
+
+
 const index = require('./routes/index');
 app.use('/', index);
+
+const router = require('./routes/auth.routes');
+app.use('/', router);
 
 
 
