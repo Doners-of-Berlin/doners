@@ -6,18 +6,15 @@ const Shops = require('../models/shop')
 router.get('/', (req, res, next) => {
   Shops.find()
     .then((shops) => {
-      shops.forEach(shop => {
-        console.log('coord:', shop.coordinates)
+      // shops.forEach(shop => {
+      //   console.log('coord:', shop.coordinates)
         // new mapboxgl.Marker()
         //   .setLngLat(coordinate)
         //   .addTo(map);
+      res.render('index')
     })
-    res.render('index')
-  })
   .catch(err => next(err))
 })
-
-
 
 router.get('/restaurant/:id', (req, res, next) => {
   Shops.findById(req.params.id).then(shopsList => {
