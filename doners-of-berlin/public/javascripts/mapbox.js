@@ -16,6 +16,15 @@ popup.setLngLat([13.41053, 52.52437])
   .setMaxWidth('400px')
   .addTo(map)
 
+  const Shops = require('../models/shop')
+  let shopsArray = Shops.find()
+  console.log(shopsArray)
+
+  shopsArray.forEach(shop => {
+   new mapboxgl.Marker().setLngLat([shop.coordinates]).addTo(map);
+});
+
+
 let marker = new mapboxgl.Marker().setLngLat([13.41053, 52.52437]).addTo(map);
 let marker2 = new mapboxgl.Marker().setLngLat([13.3942, 52.52437]).addTo(map);
 let marker3 = new mapboxgl.Marker().setLngLat([13.4, 52.51]).addTo(map);
