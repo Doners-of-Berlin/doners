@@ -18,7 +18,7 @@ const shopsSchema = new Schema({
    price: Number,
  }],
  reviews: [{
-   userid: Schema.Types.ObjectId,
+   reviewername: String,
    review: String
  }],
 });
