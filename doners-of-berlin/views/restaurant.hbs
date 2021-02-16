@@ -1,4 +1,5 @@
 
+
 <div class="header">
     <div>
       <img class="doner" src="" alt=" doner" />
@@ -21,22 +22,26 @@
   <p>{{shopsList.telephone}}</p>
 </div>
 
-<div>
-  {{#each shopsList.reviews}}
-  <p>
-    <strong>{{reviewername}} says:</strong>
-    {{review}}
-  </p>
-  {{/each}}
-</div>
 
-<div>
-  <form action="/restaurant/{{shopsList.id}}/restaurant-review" method="POST">
-    <fieldset>
-      <legend>Review Page</legend>
-      <p>Name:<input type="text" name='reviewername'></p>
-      <p>Review:<input type="textarea" name='review'></p>
-      <p><button>Give us your opinion!</button></p>
-    </fieldset>
-  </form>
-</div>
+{{#each  shopsList.reviews}}
+<p>
+  <strong>{{reviewername}} says:</strong>
+  {{review}}
+</p>
+{{/each}}
+<form action="/restaurant/{{shopsList.id}}/restaurant-review" method="POST">
+  <fieldset>
+    <legend>Review Page</legend>
+    <p>Name:<input type="text" name='reviewername'></p>
+    <p>Review:<input type="textarea" name='review'></p>
+    <p><button>Give us your opinion!</button></p>
+  </fieldset>
+</form>
+
+
+<form action="/movies/create" method="post" enctype="multipart/form-data">
+
+
+   <label for="image-input">Image:</label>
+        <input type="file" name="image" id="image-input" class="form-control-file" />
+</form>
