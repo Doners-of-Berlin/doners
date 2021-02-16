@@ -1,6 +1,6 @@
 
 <p>Name: {{shopsList.name}}</p>
-<p>{{shopsList.address1}}</p>
+<p>Address{{shopsList.address1}}</p>
 <p>{{shopsList.address2}}</p>
 <p>{{shopsList.postcode}}</p>
 <p>{{shopsList.city}}</p>
@@ -20,4 +20,12 @@
     <p>Review:<input type="textarea" name='review'></p>
     <p><button>Give us your opinion!</button></p>
   </fieldset>
+</form>
+
+
+<form action="/movies/create" method="post" enctype="multipart/form-data">
+
+
+   <label for="image-input">Image:</label>
+        <input type="file" name="image" id="image-input" class="form-control-file" />
 </form>
