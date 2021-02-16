@@ -8,10 +8,16 @@ router.get('/', (req, res, next) => {
 })
 
 router.get('/', (req, res, next) => {
-  Shops.find()
-    .then(coord => {
-      
-    })
+
+  Shops.coordinates.forEach(coord => {
+    console.log(coord)
+  })
+  .then(() => {
+    new mapboxgl.Marker()
+      .setLngLat(coord)
+      .addTo(map);
+  })
+  .catch(err => next(err))
 })
 
 
