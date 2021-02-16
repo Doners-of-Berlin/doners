@@ -8,17 +8,15 @@ const Shops = require('../models/shop')
 
 /* GET home page */
 router.get('/', (req, res, next) => {
-Shops.find().then(shopsList => {
-  console.log('-------',shopsList);
-  res.render('index', {shopsList});
-});
-
+  res.render('index')
 })
+
 
 
 router.get('/restaurant/:id', (req, res, next) => {
   Shops.findById(req.params.id).then(shopsList => {
     console.log('-------',shopsList);
+
     res.render('restaurant', {shopsList});
   });
   
