@@ -11,12 +11,8 @@
   <input id="password" type="password" name="password">
  </div>
  
- {{#if errorMessage}}
-  <div class="error-message">{{errorMessage}}</div>
- {{/if}}
- 
  <div>
-  <button>Create account</button>
+  <button type="submit">Create account</button>
  </div>
  
  <p class="account-message">
@@ -25,3 +21,8 @@
  </p>
  
 </form>
+
+  
+{{#if errorMessage}}
+  <p style="color: red">{{errorMessage}}</p>
+{{/if}}
