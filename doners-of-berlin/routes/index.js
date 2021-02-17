@@ -13,12 +13,21 @@ router.get('/', (req, res, next) => {
   })
 
 router.get('/restaurant/:id', (req, res, next) => {
+
+  if (!req.user) {
+    res.redirect('/login'); // can't access the page, so go and log in
+    return;
+  }
+ 
+  // ok, req.user is defined
+  //res.render('restaurant', { user: req.user });
   Shops.findById(req.params.id)
     .then(shopsList => {
       // console.log('-------',shopsList);
       res.render('restaurant', {shopsList});
   });
 })
+
   
   router.post("/restaurant/:id/restaurant-review", (req,res)=> {
     const {reviewername,review} = req.body
