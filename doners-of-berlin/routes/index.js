@@ -44,9 +44,15 @@ router.get('/restaurant/:id', (req, res, next) => {
   })
 
   router.post('/restaurant/:id/image-upload', fileUploader.single('image'), (req, res) => {
-    const { title, description } = req.body;
+    // const { title, description } = req.body;
+    const shopId = req.params.id
+    urlId = req.file.path
+
+    console.log('doesthisurlthingywork????', urlId)
    
-    Movie.create({ title, description, imageUrl: req.file.path })
+    Shops.findByIdAndUpdate(shopId, { 
+      $push: {imgurl: urlId}
+     })
       .then(() => res.redirect("/restaurant/" + shopId))
       .catch(error => console.log(error));
   });

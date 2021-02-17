@@ -19,6 +19,7 @@ const shopsSchema = new Schema({
    reviewername: String,
    review: String
  }],
+ imgurl: [String],
 });
 
 const Shops = mongoose.model('Shops', shopsSchema) 
