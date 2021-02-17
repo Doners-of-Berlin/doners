@@ -7,16 +7,16 @@
       <ul>
         <li><a class="button_cont" href="/signup"> Sign Up </a></li>
         <li><a class="button_cont" href="/login"> Log In </a></li>
-        <li><a class="button_cont" href="/logout"> Log Out </a></li>
+        <li><a href="/logout"><img class="logout-icon" src="./images/logout-icon.svg" alt="logout"/></a><li>
       </ul>
     </nav>
 </div>
-
+{{!-- 
 <div>
   <div class="title">
     <h1>{{title}}</h1>
     <p>Welcome to {{title}}</p>
-  </div>
+  </div> --}}
 
     <div class="maps">
       <div id="map"></div>
@@ -25,9 +25,9 @@
 
 <script src="/javascripts/mapbox.js"></script>
 <script>
-  console.log('-------------DOESTHISWORK-------------')
   {{#each shopsList}}
-    addDonnerPlace({{coordinates}}, "{{name}}","{{address}}")
+    addDonnerMarker({{coordinates}})
+    addDonnerPopup({{coordinates}}, "{{name}}","{{address}}")
   {{/each}}
 </script>
 
