@@ -1,12 +1,111 @@
-body {
-  padding: 50px;
-  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+@import url('https://fonts.googleapis.com/css2?family=Comfortaa:wght@300;400;500;600;700&family=Montserrat&display=swap');
+
+html, body, body div, span, object, iframe, blockquote, pre, abbr, address, cite, code, del, dfn, em, img, ins, kbd, q, samp, small, strong, sub, sup, var, b, i, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, figure, footer, header, hgroup, menu, nav, section, time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  outline: 0;
+  font-size: 100%;
+  vertical-align: baseline;
+  background: transparent;
+  font-size: 1rem;
 }
+
+
+h1, h2, h3, h4, h5, h6, p, div, label, button, a {
+
+  font-family: 'Comfortaa', Helvetica, Arial, sans-serif;
+}
+
 a {
   color: #00B7FF;
 }
-#map {
-  position:fixed;
-  height: 75vh;
-  width: 90vw;
+
+.title{
+  padding: 20px;
 }
+
+.left-menu {
+  background-color: white;
+  width: 50%;
+  font-size: 2rem;
+  padding: 20px;
+}
+
+#map {
+  font-family: Arial, Helvetica, sans-serif;
+  position: fixed;
+  height: 80vh;
+  width: 100%; }
+
+/*# sourceMappingURL=style.css.map */
+
+// .marker {
+//   background-image: url('mapbox-icon.png');
+//   background-size: cover;
+//   width: 50px;
+//   height: 50px;
+//   border-radius: 50%;
+//   cursor: pointer;
+// }
+
+// .mapboxgl-popup {
+//   max-width: 200px;
+// }
+
+// .mapboxgl-popup-content {
+//   text-align: center;
+//   font-family: 'Open Sans', sans-serif;
+// }
+
+.header{
+  font-family: 'Comfortaa', Helvetica, Arial, sans-serif;
+  font-weight: 900;
+  height: 80px;
+  padding: 0 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid lightgray;
+}
+
+.nav-bar {
+  width: 100%;
+}
+
+.nav-bar ul {
+  list-style: none;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+.nav-bar li{
+  padding: 10px;
+}
+
+.nav-bar a {
+  text-decoration: none;
+  color: #fff;
+  padding: 10px 25px;
+  font-size: 0.8rem;
+}
+
+.doner {
+  width: 20px;
+  margin-right: 1rem;
+}
+
+.button_cont {
+  background: #ff8daf;
+  border-radius: 30px;
+  border: none;
+  transition: all 0.2s ease 0s;
+}
+
+.button_cont:hover {
+  -webkit-box-shadow: 0px 3px 4px -2px rgba(0,0,0,0.6);
+  -moz-box-shadow: 0px 3px 4px -2px rgba(0,0,0,0.6);
+  transition: all 0.2s ease 0s;
+  }
+

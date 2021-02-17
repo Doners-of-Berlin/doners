@@ -1,8 +1,6 @@
 const mongoose = require("mongoose");
 const Schema = mongoose.Schema;
 
-
-
 // TODO: Please make sure you edit the user model to whatever makes sense in this case
 const shopsSchema = new Schema({
  name: String,
@@ -21,9 +19,8 @@ const shopsSchema = new Schema({
    reviewername: String,
    review: String
  }],
+ imgurl: [String],
 });
+
 const Shops = mongoose.model('Shops', shopsSchema) 
 module.exports = Shops
-// module.exports = mongoose.model('shop?', shops);
-
-
