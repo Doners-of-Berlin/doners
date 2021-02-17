@@ -16,22 +16,18 @@
   <div class="title">
     <h1>{{title}}</h1>
     <p>Welcome to {{title}}</p>
-</div>
-
-<div class="maps">
-      <div id="map"></div>
-    
-    </div>
-
   </div>
 
-
+    <div class="maps">
+      <div id="map"></div>
+    </div>
 </div>
 
-<script src="/javascripts/mapbox.js" ></script>
+<script src="/javascripts/mapbox.js"></script>
 <script>
-{{#each shopsList}}
-  addDonnerPlace({{coordinates}}, "{{name}}","{{address}}")
-{{/each}}
+  console.log('-------------DOESTHISWORK-------------')
+  {{#each shopsList}}
+    addDonnerPlace({{coordinates}}, "{{name}}","{{address}}")
+  {{/each}}
 </script>
 
