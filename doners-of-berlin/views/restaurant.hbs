@@ -1,10 +1,26 @@
 
-<p>Name: {{shopsList.name}}</p>
-<p>Address{{shopsList.address1}}</p>
-<p>{{shopsList.address2}}</p>
-<p>{{shopsList.postcode}}</p>
-<p>{{shopsList.city}}</p>
-<p>{{shopsList.telephone}}</p>
+
+<div class="header">
+    <div>
+      <img class="doner" src="" alt=" doner" />
+    </div>
+
+    <nav class="nav-bar">
+      <ul>
+        <li><a class="button_cont" href="#"> Sign Up </a></li>
+        <li><a class="button_cont" href="#"> Log In </a></li>
+      </ul>
+    </nav>
+</div>
+
+<div>
+  <p>Name: {{shopsList.name}}</p>
+  <p>{{shopsList.address1}}</p>
+  <p>{{shopsList.address2}}</p>
+  <p>{{shopsList.postcode}}</p>
+  <p>{{shopsList.city}}</p>
+  <p>{{shopsList.telephone}}</p>
+</div>
 
 
 {{#each  shopsList.reviews}}

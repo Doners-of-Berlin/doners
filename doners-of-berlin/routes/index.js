@@ -10,10 +10,16 @@ const fileUploader = require('../configs/cloudinary.config');
 
 /* GET home page */
 router.get('/', (req, res, next) => {
-  Shops.find().then(shopsList => {
-    console.log('-------',shopsList);
-    res.render('index', {shopsList});
-  });
+  Shops.find()
+    .then((shops) => {
+      // shops.forEach(shop => {
+      //   console.log('coord:', shop.coordinates)
+        // new mapboxgl.Marker()
+        //   .setLngLat(coordinate)
+        //   .addTo(map);
+      res.render('index')
+    })
+  .catch(err => next(err))
 })
 
 
