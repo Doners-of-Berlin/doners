@@ -1,8 +1,8 @@
+
 <div class="header">
     <div>
-      <img class="doner" src="" alt=" doner" />
+      <img class="doner" src="./images/doner_logo.jpg" alt="doner_logo"/>
     </div>
-
     <nav class="nav-bar">
       <ul>
         <li><a class="button_cont" href="/signup"> Sign Up </a></li>
@@ -11,6 +11,7 @@
       </ul>
     </nav>
 </div>
+
 {{!-- 
 <div>
   <div class="title">
@@ -18,16 +19,31 @@
     <p>Welcome to {{title}}</p>
   </div> --}}
 
+<div>
+    <div class="left-menu">
+    </div>
     <div class="maps">
       <div id="map"></div>
     </div>
+  </div>
 </div>
 
-<script src="/javascripts/mapbox.js"></script>
+<script src="/javascripts/mapbox.js" ></script>
 <script>
+
+{{!-- 
   {{#each shopsList}}
     addDonnerMarker({{coordinates}})
     addDonnerPopup({{coordinates}}, "{{name}}","{{address}}")
-  {{/each}}
-</script>
+  {{/each}} --}}
 
+{{#each shopsList}}
+  new mapboxgl.Marker()
+  new mapboxgl
+  .Popup()
+    .setHTML('<a href="/restaurant/{{_id}}">{{name}}</a>')
+    .setLngLat([{{coordinates}}])
+    .addTo(map)
+{{/each}}
+
+</script>

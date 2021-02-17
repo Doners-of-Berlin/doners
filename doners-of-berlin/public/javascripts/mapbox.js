@@ -9,22 +9,27 @@ const map = new mapboxgl.Map({
 
 map.addControl(new mapboxgl.NavigationControl());
   
-//markers (pins) for doner shops
-function addDonnerMarker(lng, lat){
-  new mapboxgl
-    .Marker()
-    .setLngLat([lng,lat])
-    .addTo(map)
-}
 
-function addDonnerPopup(lng, lat, name, address){
+//markers (pins) for doner shops
+// function addDonnerMarker(lng, lat){
+//   new mapboxgl
+//     .Marker()
+//     .setLngLat([lng,lat])
+//     .addTo(map)
+// }
+
+// function addDonnerPopup(lng, lat, name, address){
+//   new mapboxgl
+//     .Popup({
+//       anchor: 'bottom',
+//       offset: 38})
+
+function addDonnerPlace(lng, lat, name, address){
+  new mapboxgl.Marker()
   new mapboxgl
-    .Popup({
-      anchor: 'bottom',
-      offset: 38})
+  .Popup({closeButton: true})
     .setHTML("<strong>" + name + "</strong><p>" + address + "</p>")
     .setLngLat([lng,lat])
-    
     .addTo(map)
 }
 
