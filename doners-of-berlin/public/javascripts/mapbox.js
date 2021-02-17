@@ -10,8 +10,9 @@ const map = new mapboxgl.Map({
 map.addControl(new mapboxgl.NavigationControl());
   
 function addDonnerPlace(lng, lat, name, address){
-  // new mapboxgl.Marker()
-  new mapboxgl.Popup({closeButton: true})
+  new mapboxgl.Marker()
+  new mapboxgl
+  .Popup({closeButton: true})
     .setHTML("<strong>" + name + "</strong><p>" + address + "</p>")
     .setLngLat([lng,lat])
     .addTo(map)
