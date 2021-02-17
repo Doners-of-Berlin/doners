@@ -11,11 +11,13 @@
       </ul>
     </nav>
 </div>
+
+{{!-- 
 <div>
   <div class="title">
     <h1>{{title}}</h1>
     <p>Welcome to {{title}}</p>
-  </div>
+  </div> --}}
 
 <div>
     <div class="left-menu">
@@ -28,6 +30,13 @@
 
 <script src="/javascripts/mapbox.js" ></script>
 <script>
+
+{{!-- 
+  {{#each shopsList}}
+    addDonnerMarker({{coordinates}})
+    addDonnerPopup({{coordinates}}, "{{name}}","{{address}}")
+  {{/each}} --}}
+
 {{#each shopsList}}
   new mapboxgl.Marker()
   new mapboxgl
@@ -36,4 +45,5 @@
     .setLngLat([{{coordinates}}])
     .addTo(map)
 {{/each}}
+
 </script>
