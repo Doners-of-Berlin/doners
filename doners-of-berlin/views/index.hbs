@@ -20,5 +20,18 @@
 
 <div class="maps">
       <div id="map"></div>
-      <script src="/javascripts/mapbox.js"></script>
+    
+    </div>
+
+  </div>
+
+
 </div>
+
+<script src="/javascripts/mapbox.js" ></script>
+<script>
+{{#each shopsList}}
+  addDonnerPlace({{coordinates}}, "{{name}}","{{address}}")
+{{/each}}
+</script>
+
