@@ -1,70 +1,66 @@
-
 <div class="header">
-    <div>
-       <img class="doner" src="./images/doner_logo.jpg" alt="doner_logo"/>
-    </div>
+  <div>
+    <img class="doner" src="./images/doner_logo.jpg" alt="doner_logo" />
+  </div>
 
-    <nav class="nav-bar">
-      <ul>
-        {{!-- <li><a class="button_cont" href="/signup"> Sign Up </a></li>
-        <li><a class="button_cont" href="/login"> Log In </a></li>
-        <li><a class="button_cont" href="/"> Home </a></li> --}}
-        <li><a href="/logout"><img class="logout-icon" src="./images/logout-icon.svg" alt="logout"/></a><li>
-      </ul>
-    </nav>
+  <nav class="nav-bar">
+    <ul>
+      {{!-- <li><a class="button_cont" href="/signup"> Sign Up </a></li>
+      <li><a class="button_cont" href="/login"> Log In </a></li>
+      <li><a class="button_cont" href="/"> Home </a></li> --}}
+      <li><a href="/logout"><img class="logout-icon" src="./images/logout-icon.svg" alt="logout" /></a>
+      <li>
+    </ul>
+  </nav>
 </div>
 
 <div class="main-win">
   <div class="rest-info">
     <div class="rest-data">
-          <h1 class="shop-name">{{shopsList.name}}</h1>
-          <h4>{{shopsList.address1}}</h4>
-          <h4>{{shopsList.address2}}</h4>
-          <h4>{{shopsList.postcode}}</h4>
-          <h4>{{shopsList.city}}</h4>
-          <h4>{{shopsList.telephone}}</h4>
-          <form action="/restauran/{{shopsList._id}}/delete" method="POST"><button>Delete!</button></form>
-          <form action="/restauran/{{shopsList._id}}/edit" method="GET"><button>edit!</button></form>
+      <h1 class="shop-name">{{shopsList.name}}</h1>
+      <h4>{{shopsList.telephone}}</h4>
+      <h4>{{shopsList.address1}}</h4>
+      <h4>{{shopsList.address2}}</h4>
+      <h4>{{shopsList.city}} {{shopsList.postcode}}</h4><br>
 
+      <div class="form-buttons">
+        <form action="/restauran/{{shopsList._id}}/edit" method="GET"><input class="edit-btn" type="button" value="Edit"></form>
+        <form action="/restauran/{{shopsList._id}}/delete" method="POST"><input class="delete-btn" type="button" value="Delete?" alt="You sure?"></form>
+      </div>
     </div>
-    
-  <div class="review">
 
-    <form action="/restaurant/{{shopsList.id}}/restaurant-review" method="POST">
-      <fieldset>
-        <h3>Review shop</h3>
-        <p>Name:<input type="text" name='reviewername' class="input-name" ></p>
-        <p>Review:<input type="textarea" name='review'class="input-review" ></p>
-        <p><input type="button" value="Give us your opinion!"></p>
-      </fieldset>
-    </form><br>
+    <div class="review">
 
-    <form action="/restaurant/{{shopsList.id}}/image-upload" method="post" enctype="multipart/form-data">
-      <label for="image-input">Image:</label>
-      <input type="file" name="image" id="image-input" class="form-control-file" />
-      <button type="submit" class="btn btn-primary">Create</button>
-    </form>
+      <form action="/restaurant/{{shopsList.id}}/restaurant-review" method="POST">
+        <fieldset>
+          <h3>Review shop</h3>
+          Name:<input type="text" name='reviewername' class="input-name">
+          Review:<input type="textarea" name='review' class="input-review">
+          <button type="submit" class="opinion-btn">Give us your opinion!</button>
+        </fieldset>
+      </form><br>
 
-    <div class="user-reviews">
-      {{#each shopsList.reviews}}
-        <h3>{{reviewername}} says:</h3>
-        <p>{{review}}</p>
-      {{/each}}
+      <form action="/restaurant/{{shopsList.id}}/image-upload" method="post" enctype="multipart/form-data">
+        <label for="image-input">Image:</label><br><br>
+        <input type="file" name="image" id="image-input" class="form-control-file" />
+        <button type="submit" class="opinion-btn">Uplad image</button>
+      </form>
+
+      <div class="user-reviews">
+        {{#each shopsList.reviews}}
+          <h3>{{reviewername}} says:</h3>
+          <p>{{review}}</p>
+        {{/each}}
+      </div>
+
     </div>
 
   </div>
 
-</div>
-  
   <div class="slider">
     <div class="pic-ctn">
-        {{#each shopsList}}
-          {{!-- <img src="https://www.takeaway.com/be/foodwiki/uploads/sites/2/2017/10/doner-kebab-3-1080x960.jpg" alt="" class="pic">
-          <img src="https://www.muminthemadhouse.com/wp-content/uploads/2016/01/Fakeaway-slow-cooker-doner-kebab..jpg" alt="" class="pic">
-          <img src="https://www.spiceraks.com/Graphics/LambDonnerKebabRecipe.jpg" alt="" class="pic"> --}}
-          <img src="{{imgurl}}" alt="" class="pic">
-        {{/each}}
+      {{{images}}}
     </div>
   </div>
-  
+
 </div>
