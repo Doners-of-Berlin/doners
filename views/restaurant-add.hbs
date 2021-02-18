@@ -1,35 +1,37 @@
- {{!-- name: String,
- address1: String,
- address2: String,
- postcode: Number,
- city: String,
- telephone: Number,
- coordinates: [],
- Photographs: Array,
- menuItems: [{
-   fooditem: String,
-   price: Number,
- }],
- reviews: [{
-   reviewername: String,
-   review: String
- }],
- imgurl: [String],
-}); --}}
+{{!-- <div class="header">
+    <div>
+        <img class="doner-logo" src="../images/doners-logo.svg" alt="doners_of_berlin_logo" />
+    </div>
+    <nav class="nav-bar">
+        <ul>
+        </ul>
+    </nav>
+</div> --}}
 
 
- <form action="/restauran/add" method="POST">
-  <fieldset>
-       <p>Name:<input type="text" name='name'></p>
-       <p>address:<input type="text" name='address1'></p>
-       <p>address2:<input type="text" name='address2'></p>
-       <p>postcode:<input type="text" name='postcode'></p>
-       <p>city:<input type="text" name='city'></p>
-       <p>phone:<input type="text" name='telephone'></p>
-       <p>coordinates:<input type="text" name='coordinates'></p>
-       <p>coordinates:<input type="text" name='coordinates'></p>
+<div class="rest-window">
+    <div>
+         <a href="/"><img class="doner-logo" src="../images/doners-logo.svg" alt="doners_of_berlin_logo" /></a> 
+    </div>
 
-        <p><button>Submit</button></p>
-      </fieldset>
-    </form>
+    <div class="rest-form">
+        <div class="rest-form-left">
+            <form action="/restauran/add" method="POST">
+                <fieldset>
+                    <p>Name:<input type="text" name='name' class="input-review"></p>
+                    <p>Address line 1:<input type="text" name='address1' class="input-review"></p>
+                    <p>City:<input type="text" name='city' class="input-review"></p>
+                    <p>Longditude:<input type="text" name='coordinates' class="input-review"></p>
+        </div>
 
+        <div class="rest-form-right">
+            <p>Phone No:<input type="text" name='telephone' class="input-review"></p>
+            <p>Address line 2:<input type="text" name='address2' class="input-review"></p>
+            <p>Postcode:<input type="text" name='postcode' class="input-review"></p>
+            <p>Latitude:<input type="text" name='coordinates' class="input-review"></p>
+            </fieldset>
+            </form>
+        </div>
+    </div>
+    <p><button class="opinion-btn">Add a restaurant</button></p>
+</div>

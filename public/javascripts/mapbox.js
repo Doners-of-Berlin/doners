@@ -27,7 +27,9 @@ map.addControl(new mapboxgl.NavigationControl());
 function addDonnerPlace(lng, lat, name, address){
   new mapboxgl.Marker()
   new mapboxgl
-  .Popup({closeButton: true})
+  .Popup({
+        anchor: 'bottom',
+        offset: 38})
     .setHTML("<strong>" + name + "</strong><p>" + address + "</p>")
     .setLngLat([lng,lat])
     .addTo(map)
