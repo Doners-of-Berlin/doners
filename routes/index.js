@@ -60,7 +60,12 @@ router.post("/restauran/add", (req, res, next) => {
 router.post("/restaurant/:id/restaurant-review", (req, res) => {
   const { reviewername, review } = req.body;
   const shopId = req.params.id;
+  console.log("req.body", reviewername, review);
+  if (review === '') {
+    res.render("restaurant", { errorMessage: 'Your review cannot be empty' });
 
+    return;
+  }
   // Shops.findById(shopId).then(shop => {
   // shop.reviews.push({reviewername,review})
   console.log("req.body", reviewername, review);
