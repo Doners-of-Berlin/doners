@@ -96,6 +96,10 @@ a {
   width: 600px;
   padding: 0px 100px 50px 50px; }
 
+.form-buttons {
+  display: flex;
+  justify-content: flex-end; }
+
 .rest-data > h4 {
   line-height: .35rem; }
 
@@ -115,18 +119,33 @@ input[type=textarea] {
   box-shadow: 0 0 5px 2px rgba(0, 0, 0, 0.08);
   height: 150px; }
 
-input[type=button] {
+.edit-btn {
+  margin: 10px 8px; }
+
+.edit-btn:hover {
+  background: #ffa9c3; }
+
+.delete-btn {
+  margin: 10px 8px; }
+
+.delete-btn:hover {
+  background: #db275d; }
+
+.opinion-btn {
+  background: #ff8daf !important;
+  width: 100%;
+  margin: 10px 0;
   font-family: 'Comfortaa', Helvetica, Arial, sans-serif;
   color: white;
-  background: #ff8daf;
+  background-color: #b4b4b4;
   border-radius: 30px;
   border: none;
   padding: 12px 25px;
   transition: all 0.2s ease 0s; }
 
-input[type=button]:hover {
+.opinion-btn:hover {
+  background: #ffa9c3 !important;
   cursor: pointer;
-  background: #ffa9c3;
   -webkit-box-shadow: 0px 3px 4px -2px rgba(0, 0, 0, 0.6);
   -moz-box-shadow: 0px 3px 4px -2px rgba(0, 0, 0, 0.6);
   transition: all 0.2s ease 0s; }
@@ -142,7 +161,7 @@ input[type=button]:hover {
   border-radius: 5px; }
 
 .user-reviews {
-  margin-top: 50px;
+  margin-top: 30px;
   border-top: 1px solid #ff8daf;
   padding: 20px 0; }
 
@@ -158,6 +177,7 @@ img {
   height: 500px; }
 
 .pic-ctn > img {
+  background-image: cover;
   max-height: 100%;
   max-width: 100%;
   position: absolute;
@@ -176,6 +196,12 @@ img:nth-child(4) {
 
 img:nth-child(5) {
   animation-delay: 8s; }
+
+img:nth-child(6) {
+  animation-delay: 10s; }
+
+img:nth-child(7) {
+  animation-delay: 12s; }
 
 @keyframes display {
   0% {
