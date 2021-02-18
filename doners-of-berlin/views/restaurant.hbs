@@ -24,6 +24,9 @@
           <h4>{{shopsList.postcode}}</h4>
           <h4>{{shopsList.city}}</h4>
           <h4>{{shopsList.telephone}}</h4>
+          <form action="/restauran/{{shopsList._id}}/delete" method="POST"><button>Delete!</button></form>
+          <form action="/restauran/{{shopsList._id}}/edit" method="GET"><button>edit!</button></form>
+
     </div>
 
     {{#each shopsList.reviews}}
