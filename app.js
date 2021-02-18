@@ -16,7 +16,7 @@ const LocalStrategy = require('passport-local').Strategy;
 const MONGO_URI = process.env.MONGODB_URI || "mongodb://localhost/doner";
 
 mongoose
-  .connect('mongodb://localhost/doner', {useNewUrlParser: true})
+  .connect(MONGO_URI, {useNewUrlParser: true})
   .then(x => {
     console.log(`Connected to Mongo! Database name: "${x.connections[0].name}"`)
   })
