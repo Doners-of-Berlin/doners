@@ -28,6 +28,21 @@ router.get('/restaurant/:id', (req, res, next) => {
   });
 })
 
+
+router.get('/restauran/add', (req, res, next) => {
+    res.render('../views/restaurant-add.hbs', );
+  });
+
+  router.post('/restauran/add', (req, res, next) => {
+    const {name,address1,address2,postcode,city,telephone,coordinates} = req.body
+    
+     Shops.create({name,address1,address2,postcode,city,telephone,coordinates})
+        .then(() => res.redirect("/"))
+        .catch((err) => console.log(err))
+  })
+  
+  
+
   
   router.post("/restaurant/:id/restaurant-review", (req,res)=> {
     const {reviewername,review} = req.body
@@ -59,5 +74,43 @@ router.get('/restaurant/:id', (req, res, next) => {
       .then(() => res.redirect("/restaurant/" + shopId))
       .catch(error => console.log(error));
   });
+
+  router.post("/restauran/:id/delete", (req,res)=> {
+    // const {name,occupation,catchPhrase} = req.body
+    Shops.findByIdAndRemove(req.params.id)
+    .then(shops => {
+      res.redirect("/")
+    }).catch(error => console.log(error))
+  
+  
+  })
+
+
+
+
+  router.get('/restauran/:id/edit', (req, res, next) => {
+    Shops.findById(req.params.id)
+    .then(shopsList => {
+      // console.log('-------',shopsList);
+      res.render('restaurant-edit', {shopsList});
+    });
+    })
+
+
+
+    router.get('/restauran/add', (req, res, next) => {
+      res.render('../views/restaurant-add.hbs', );
+    });
+  
+    router.post('/restauran/:id/edit', (req, res, next) => {
+      const {name,address1,address2,postcode,city,telephone,coordinates} = req.body
+      const shopId = req.params.id
+
+      
+       Shops.findByIdAndUpdate(shopId, {name,address1,address2,postcode,city,telephone,coordinates})
+          .then(() => res.redirect("/"))
+          .catch((err) => console.log(err))
+    })
+    
 
 module.exports = router;
