@@ -69,11 +69,11 @@ a {
   height: 27px; }
 
 .doner {
-  width: 60px;
-  margin-right: 1rem; }
+  width: 60px; }
 
 .button_cont {
   background: #ff8daf;
+  cursor: pointer;
   border-radius: 30px;
   border: none;
   padding: 12px 25px;
