@@ -40,11 +40,17 @@
         </fieldset>
       </form><br>
 
+       {{#if errorMessage}}
+  <p style="color: red">{{errorMessage}}</p>
+  {{/if}}
+
       <form action="/restaurant/{{shopsList.id}}/image-upload" method="post" enctype="multipart/form-data">
         <label for="image-input">Image:</label><br><br>
         <input type="file" name="image" id="image-input" class="form-control-file" />
-        <button type="submit" class="opinion-btn">Uplad image</button>
+        <button type="submit" class="opinion-btn">Upload image</button>
       </form>
+
+
 
       <div class="user-reviews">
         {{#each shopsList.reviews}}
