@@ -14,6 +14,9 @@ h2, h3, h4, h5, h6, p, div, label, button, a {
   font-family: 'Comfortaa', Helvetica, Arial, sans-serif;
   font-weight: 400; }
 
+p {
+  font-size: 0.9rem; }
+
 .shop-name {
   font-family: 'Comfortaa', Helvetica, Arial, sans-serif;
   font-size: 3rem;
@@ -21,7 +24,9 @@ h2, h3, h4, h5, h6, p, div, label, button, a {
   letter-spacing: -0.1rem; }
 
 a {
-  color: #ff8daf; }
+  text-decoration: none;
+  text-align: center;
+  color: #ea3d3d; }
 
 .title {
   padding: 20px; }
@@ -68,11 +73,12 @@ a {
 .logout-icon {
   height: 27px; }
 
-.doner {
-  width: 60px; }
+.doner-logo {
+  width: 160px;
+  padding-left: 40px; }
 
 .button_cont {
-  background: #ff8daf;
+  background: #ea3d3d;
   cursor: pointer;
   border-radius: 30px;
   border: none;
@@ -81,7 +87,7 @@ a {
 
 .button_cont:hover {
   cursor: pointer;
-  background: #ffa9c3;
+  background: #bf3636;
   -webkit-box-shadow: 0px 3px 4px -2px rgba(0, 0, 0, 0.6);
   -moz-box-shadow: 0px 3px 4px -2px rgba(0, 0, 0, 0.6);
   transition: all 0.2s ease 0s; }
@@ -120,31 +126,36 @@ input[type=textarea] {
   height: 150px; }
 
 .edit-btn {
-  margin: 10px 8px; }
+  background: #dadada;
+  margin: 10px 8px;
+  color: #747474; }
 
 .edit-btn:hover {
-  background: #ffa9c3; }
+  color: white;
+  background: #ea3d3d; }
 
 .delete-btn {
-  margin: 10px 8px; }
+  background: #dadada;
+  margin: 10px 8px;
+  color: #747474; }
 
 .delete-btn:hover {
-  background: #db275d; }
+  color: white;
+  background: #691919; }
 
 .opinion-btn {
-  background: #ff8daf !important;
+  background: #ea3d3d !important;
   width: 100%;
   margin: 10px 0;
   font-family: 'Comfortaa', Helvetica, Arial, sans-serif;
   color: white;
-  background-color: #b4b4b4;
   border-radius: 30px;
   border: none;
   padding: 12px 25px;
   transition: all 0.2s ease 0s; }
 
 .opinion-btn:hover {
-  background: #ffa9c3 !important;
+  background: #bf3636 !important;
   cursor: pointer;
   -webkit-box-shadow: 0px 3px 4px -2px rgba(0, 0, 0, 0.6);
   -moz-box-shadow: 0px 3px 4px -2px rgba(0, 0, 0, 0.6);
@@ -216,5 +227,53 @@ img:nth-child(7) {
   30% {
     transform: translateX(300px);
     opacity: 0; } }
+
+.rest-window {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-content: center;
+  align-items: center; }
+
+.logo-add-rest {
+  padding: 50px 0px;
+  height: 300px; }
+
+.logo-login {
+  padding: 20px 0px;
+  height: 200px; }
+
+.rest-form {
+  display: flex;
+  justify-content: center;
+  width: 700px;
+  border-radius: 5px;
+  box-shadow: 0 0 5px 2px rgba(0, 0, 0, 0.08);
+  padding: 30px;
+  background: #ececec; }
+
+.login-window {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center; }
+
+.login-form {
+  width: 400px;
+  border-radius: 5px;
+  box-shadow: 0 0 5px 2px rgba(0, 0, 0, 0.08);
+  padding: 30px;
+  background: #ececec; }
+
+.rest-form-left {
+  padding: 0 20px;
+  width: 100%; }
+
+.rest-form-right {
+  padding: 0 20px;
+  width: 100%; }
 
 /*# sourceMappingURL=style.css.map */

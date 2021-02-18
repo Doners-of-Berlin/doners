@@ -1,46 +1,29 @@
 <div class="header">
-  <div>
-    <a href="/"><img class="doner" src="./images/doner_logo.jpg" alt="doner_logo" /></a>
-  </div>
-  <div>
-    <h1>{{title}}</h1>
-  </div>
-  <nav class="nav-bar">
-    <ul>
-      <li><a href="/logout"><img class="logout-icon" src="./images/logout-icon.svg" alt="logout" /></a></li>
-    </ul>
-  </nav>
+    <nav class="nav-bar">
+        <ul>
+            <li><a href="/logout"><img class="logout-icon" src="./images/logout-icon.svg" alt="logout" /></a></li>
+        </ul>
+    </nav>
 </div>
 
-
-<div class="signup-login-body">
-
-  <h1>Login</h1>
-  <form action="/login" method="POST">
+<div class="login-window">
     <div>
-      <label for="username">Username:</label>
-      <input type="text" name="username" id="username">
+        <a href="/"><img class="logo-login" src="../images/doners-logo.svg" alt="doners_of_berlin_logo" /></a>
     </div>
-
-    <div>
-      <label for="password">Password:</label>
-      <input type="password" name="password" id="password">
+    <h1>Login</h1>
+    <div class="login-form">
+        <form action="/login" method="POST">
+        <fieldset>
+            <label for="username" class="input-review"></label>Username:</label>
+            <input type="text" name="username" id="username" class="input-review">
+            <label for="password" class="input-review">Password:</label>
+            <input type="password" name="password" id="password" class="input-review">
+            <button class="opinion-btn" type="submit">Log in</button>
+            <span class="account-message">Don't have an account yet?<a href="/signup">Signup</a></span>
+        </fieldset>
+        </form>
+        {{#if errorMessage}}
+        <p style="color: red">{{errorMessage}}</p>
+        {{/if}}
     </div>
-
-
-    <div>
-      <button class="button_cont" type="submit">Log in</button>
-    </div>
-    <p class="account-message">
-      Don't have an account yet?
-      <a href="/signup">Signup</a>
-    </p>
-
-
-  </form>
-
-  {{#if errorMessage}}
-  <p style="color: red">{{errorMessage}}</p>
-  {{/if}}
-
 </div>

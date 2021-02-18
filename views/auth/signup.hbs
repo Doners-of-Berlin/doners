@@ -1,50 +1,28 @@
 <div class="header">
-    <div>
-      <img class="doner" src="./images/doner_logo.jpg" alt="doner_logo"/>
-    </div>
-       <div>
-           <h1>{{title}}</h1>
-      </div>
     <nav class="nav-bar">
-      <ul>
-        <li><a class="button_cont" href="/"> Home </a></li>
-        <li><a class="button_cont" href="/signup"> Sign Up </a></li>
-        <li><a class="button_cont" href="/login"> Log In </a></li>
-        <li><a href="/logout"><img class="logout-icon" src="./images/logout-icon.svg" alt="logout"/></a><li>
-      </ul>
+        <ul>
+            <li><a href="/logout"><img class="logout-icon" src="./images/logout-icon.svg" alt="logout" /></a></li>
+        </ul>
     </nav>
 </div>
-<div>
-  <div class="title">
-   
 
-<div class="signup-login-body">
-<h1>Signup</h1>
- 
-<form action="/signup" method="POST" id="form-container">
- <div>
-  <label for="username">Username</label>
-  <input id="username" type="text" name="username">
- </div>
- 
- <div>
-  <label for="password">Password</label>
-  <input id="password" type="password" name="password">
- </div>
- 
- <div>
-  <button type="submit">Create account</button>
- </div>
- 
- <p class="account-message">
-  Do you already have an account?
-  <a href="/login">Login</a>
- </p>
- 
-</form>
 
-  
-{{#if errorMessage}}
-  <p style="color: red">{{errorMessage}}</p>
-{{/if}}
+<div class="login-window">
+    <div>
+        <a href="/"><img class="logo-login" src="../images/doners-logo.svg" alt="doners_of_berlin_logo" /></a>
+    </div>
+    <h1>Signup</h1>
+    <div class="login-form">
+        <form action="/signup" method="POST" id="form-container">
+            <label for="username">Username</label>
+            <input id="username" type="text" name="username">
+            <label for="password">Password</label>
+            <input id="password" type="password" name="password">
+            <button type="submit" class="opinion-btn">Create account</button>
+            <span class="account-message">Do you already have an account?<a href="/login">Login</a></span>
+        </form><br>
+        {{#if errorMessage}}
+        <p style="color: red">{{errorMessage}}</p>
+        {{/if}}
+    </div>
 </div>

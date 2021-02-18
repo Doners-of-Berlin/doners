@@ -71,8 +71,6 @@ app.use(
 // passport configuration
 const User = require('./models/User.model');
 
-
-
 // we serialize only the `_id` field of the user to keep the information stored minimum
 passport.serializeUser((user, done) => {
   done(null, user._id);
