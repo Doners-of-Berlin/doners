@@ -1,7 +1,9 @@
 const mongoose = require('mongoose');
 const doners = require('./models/shop');
 
-mongoose.connect('mongodb://localhost/doner', {
+const MONGO_URI = process.env.MONGODB_URI || "mongodb://localhost/doner";
+
+mongoose.connect(MONGO_URI, {
   userNewUrlParser: true
 });
 
