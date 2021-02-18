@@ -13,7 +13,7 @@ const MongoStore   = require('connect-mongo')(session);
 const bcrypt       = require('bcrypt');
 const passport     = require('passport');
 const LocalStrategy = require('passport-local').Strategy;
-
+const MONGO_URI = process.env.MONGODB_URI || "mongodb://localhost/doner";
 
 mongoose
   .connect('mongodb://localhost/doner', {useNewUrlParser: true})
