@@ -1,3 +1,5 @@
+<link href="https://api.mapbox.com/mapbox-gl-js/v2.1.1/mapbox-gl.css" rel="stylesheet" />
+
 <div class="header">
     <div>
         <a href="/"><img class="doner-logo" src="../images/doners-logo.svg" alt="doners_of_berlin_logo" /></a> 
@@ -12,31 +14,85 @@
       </ul>
     </nav>
 </div>
+ 
+<div class="container">
+    <div id="map"></div> 
+</div>
+<style>
+     body {
+        margin: 0;
+        padding: 0;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+      } 
+      .container {
+        position: relative;
+        flex: 1;  
+      }
+       
+      .marker {
+        background-image: url('./images/burito.png');
+        background-size: cover;
+        width: 36px;
+        height: 36px;
+        border-radius: 50%;
+        cursor: pointer;
+      }
+      .mapboxgl-popup {
+        max-width: 200px;
+      } 
+</style>
 
-<div>
-    {{!-- <div class="left-menu"> --}}
-    <div class="maps">
-      <div id="map"></div>
-    </div>
-  </div>
-{{!-- </div> --}}
-
-<script src="/javascripts/mapbox.js" ></script>
 <script>
+    mapboxgl.accessToken = "pk.eyJ1IjoiYW5pYW5pYW5pYSIsImEiOiJja2w2ZjluM2YyN3BxMnZsYjkxenkwa2l3In0.ykZjMZE_daToUo2DDC0h8g";
 
+    var geojson = {
+        'type': 'FeatureCollection',
+        'features': [
 
-  {{!-- {{#each shopsList}}
-    addDonnerMarker({{coordinates}})
-    addDonnerPopup({{coordinates}}, "{{name}}","{{address}}")
-  {{/each}} --}}
+          {{#each shopsList}}
+          {
+            'type': 'Feature',
+            'geometry': {
+              'type': 'Point',
+              'coordinates': [{{coordinates}}]
+            },
+            'properties': {
+              'title': '{{name}}',
+              'description': ' <br /><br /><a href="/restaurant/{{_id}}"> show more</a>' 
+            }
+          },
+          {{/each}}
+        ]
+      };
 
-{{#each shopsList}}
-  new mapboxgl.Marker()
-  new mapboxgl
-  .Popup()
-    .setHTML('<a href="/restaurant/{{_id}}">{{name}}</a>')
-    .setLngLat([{{coordinates}}])
-    .addTo(map)
-{{/each}}
+      var map = new mapboxgl.Map({
+        container: 'map',
+        style: 'mapbox://styles/mapbox/light-v10',
+        center: [13.41053, 52.52437], // starting position [lng, lat]
+        zoom: 11  // starting zoom
+      });
 
+      // add markers to map
+      geojson.features.forEach(function (marker) {
+        // create a HTML element for each feature
+        var el = document.createElement('div');
+        el.className = 'marker';
+
+        // make a marker for each feature and add it to the map
+        new mapboxgl.Marker(el)
+          .setLngLat(marker.geometry.coordinates)
+          .setPopup(
+            new mapboxgl.Popup({ offset: 25 }) // add popups
+              .setHTML(
+                '<h3>' +
+                  marker.properties.title +
+                  '</h3><p>' +
+                  marker.properties.description +
+                  '</p>'
+              )
+          )
+          .addTo(map);
+      });
 </script>
